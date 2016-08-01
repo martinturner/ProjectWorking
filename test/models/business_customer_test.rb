@@ -1,18 +1,17 @@
 # == Schema Information
 #
-# Table name: promotions
+# Table name: business_customers
 #
 #  id          :integer          not null, primary key
-#  name        :text
-#  description :text
-#  point_cost  :decimal(, )
+#  business_id :integer
+#  customer_id :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
 
 require 'test_helper'
 
-class PromotionTest < ActiveSupport::TestCase
+class BusinessCustomerTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

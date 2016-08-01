@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :business_customers
   devise_for :customers
   devise_for :staffs
   resources :points
@@ -6,6 +7,8 @@ Rails.application.routes.draw do
   resources :promotions
   resources :businesses
   resources :staffs
+
+  root 'businesses#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

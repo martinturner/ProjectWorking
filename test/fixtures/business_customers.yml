@@ -1,11 +1,10 @@
 # == Schema Information
 #
-# Table name: promotions
+# Table name: business_customers
 #
 #  id          :integer          not null, primary key
-#  name        :text
-#  description :text
-#  point_cost  :decimal(, )
+#  business_id :integer
+#  customer_id :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
@@ -13,11 +12,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyText
-  description: MyText
-  point_cost: 9.99
+  business_id: 
+  customer_id: 
 
 two:
-  name: MyText
-  description: MyText
-  point_cost: 9.99
+  business_id: 
+  customer_id: 
