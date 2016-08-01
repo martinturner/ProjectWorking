@@ -25,4 +25,5 @@ class Staff < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   belongs_to :business
+
 end
