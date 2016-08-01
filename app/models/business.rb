@@ -14,4 +14,6 @@ class Business < ActiveRecord::Base
 	has_many :promotions
 	has_many :business_customers
 	has_many :customers, :through => :business_customers
+
+
 end

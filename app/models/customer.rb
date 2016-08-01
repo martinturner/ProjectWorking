@@ -28,6 +28,7 @@ class Customer < ActiveRecord::Base
 
   has_many :points
   has_many :businesses
+  has_ancestry :cache_depth => true
 
   has_many :business_customers
   has_many :businesses, :through => :business_customers

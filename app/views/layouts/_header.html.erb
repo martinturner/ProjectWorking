@@ -1,0 +1,36 @@
+ <!-- Fixed navbar -->
+    <nav class="navbar navbar navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-responsive-collapse" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          
+        </div>
+        <div id="navbar" class="navbar-collapse collapse navbar-responsive-collapse">
+          <div class="header-inner"
+             <a id="header-logo" class="navbar-brand">
+                <%= image_tag (""), class: "header_image pull-left" %>
+          </div>
+                <a class="navbar-brand" href="/businesses">Business Woohoo</a>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            
+            <li class="<%= header_active("businesses", "index") %>"><%= link_to "Home", root_path %></li>
+            <li class="<%= header_active("promotions","index") %>"><%= link_to "Promotions", promotions_path %></li>
+            <% if staff_signed_in? %>
+                <li>
+                  <%= link_to('Logout', destroy_staff_session_path, :method => :delete) %>        
+                </li>
+            <% else %>
+                <li>
+                  <%= link_to('Login', new_staff_session_path)  %>  
+                </li>
+            <% end %>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
