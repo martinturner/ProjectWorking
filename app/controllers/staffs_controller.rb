@@ -1,5 +1,6 @@
 class StaffsController < ApplicationController
   before_action :set_staff, only: [:show, :edit, :update, :destroy]
+  before_action :set_business
 
   # GET /staffs
   # GET /staffs.json
@@ -25,18 +26,14 @@ class StaffsController < ApplicationController
   # POST /staffs.json
   def create
     @staff = Staff.new(staff_params)
+    @staff.business_id = @business.id
 
-    respond_to do |format|
-      if @staff.save
-        format.html { redirect_to @staff, notice: 'Staff was successfully created.' }
-        format.json { render :show, status: :created, location: @staff }
-      else
-        format.html { render :new }
-        format.json { render json: @staff.errors, status: :unprocessable_entity }
-      end
+    if @staff.save
+      redirect_to @business
+    else
+      render 'new'
     end
   end
-
   # PATCH/PUT /staffs/1
   # PATCH/PUT /staffs/1.json
   def update
@@ -65,6 +62,10 @@ class StaffsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_staff
       @staff = Staff.find(params[:id])
+    end
+
+    def set_business
+      @business = Business.find(params[:business_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
