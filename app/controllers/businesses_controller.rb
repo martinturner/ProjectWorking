@@ -1,15 +1,17 @@
 class BusinessesController < ApplicationController
   before_action :set_business, only: [:show, :edit, :update, :destroy]
-
+ 
   # GET /businesses
   # GET /businesses.json
   def index
     @businesses = Business.all
+    @staffs = Staff
   end
 
   # GET /businesses/1
   # GET /businesses/1.json
   def show
+    @staffs = Staff.where(business_id: @business.id).order(:id)
   end
 
   # GET /businesses/new
