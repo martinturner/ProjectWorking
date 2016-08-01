@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   resources :points
   resources :customers
   resources :promotions
-  resources :businesses
-  resources :staffs
+
+  
+  resources :businesses do
+    resources :staffs
+  end
 
   root 'businesses#index'
   # The priority is based upon order of creation: first created -> highest priority.

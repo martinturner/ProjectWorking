@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160801054739) do
+ActiveRecord::Schema.define(version: 20160801055830) do
 
   create_table "business_customers", force: :cascade do |t|
     t.integer  "business_id"
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 20160801054739) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.integer  "business_id"
   end
 
   add_index "staffs", ["email"], name: "index_staffs_on_email", unique: true
